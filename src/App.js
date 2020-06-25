@@ -140,8 +140,8 @@ class App extends Component {
           params={particleParams}
         />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
-        {
-          route === 'home' ?
+        
+
             <div>
               <Logo />
               <Rank name={this.state.user.name} entries={this.state.user.entries}/>
@@ -154,14 +154,14 @@ class App extends Component {
                 imageUrl={imageUrl}
               /> 
             </div>
-            : route === 'signin' ? 
-              <SignIn
+
+              {/* <SignIn
                 loadUser={this.loadUser}
                 onRouteChange={this.onRouteChange}/>
-              : <Register
+              <Register
                   loadUser={this.loadUser}
-                  onRouteChange={this.onRouteChange}/>
-        }
+                  onRouteChange={this.onRouteChange}/> */}
+
       </div>
     );
   }
