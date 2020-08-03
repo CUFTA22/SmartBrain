@@ -141,8 +141,8 @@ class App extends Component {
         />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         
-
-            <div>
+        { route === 'home' ?
+          <div>
               <Logo />
               <Rank name={this.state.user.name} entries={this.state.user.entries}/>
               <ImageLinkForm
@@ -153,14 +153,17 @@ class App extends Component {
                 box={box}
                 imageUrl={imageUrl}
               /> 
-            </div>
+          </div>
 
-              {/* <SignIn
-                loadUser={this.loadUser}
-                onRouteChange={this.onRouteChange}/>
-              <Register
+            : ( route === 'signin'
+               ? <SignIn
                   loadUser={this.loadUser}
-                  onRouteChange={this.onRouteChange}/> */}
+                  onRouteChange={this.onRouteChange}/>
+               : <Register
+                  loadUser={this.loadUser}
+                  onRouteChange={this.onRouteChange}/>
+            )
+        }
 
       </div>
     );
